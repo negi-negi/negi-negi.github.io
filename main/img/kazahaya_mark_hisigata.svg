@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 1280 1024" style="enable-background:new 0 0 1280 1024;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EACC90;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:#003D1D;}
+	.st2{fill:#EACC90;}
+	.st3{font-family:'Jun101Pro-Light-90ms-RKSJ-H';}
+	.st4{font-size:38px;}
+</style>
+<rect x="576.64" y="447.14" transform="matrix(0.7071 0.7071 -0.7071 0.7071 555.4297 -305.9258)" class="st0" width="140.71" height="140.71"/>
+<g>
+	<g>
+		<rect x="622.48" y="443.67" class="st1" width="49" height="49"/>
+		<path d="M670.98,444.17v48h-48v-48H670.98 M671.98,443.17h-50v50h50V443.17L671.98,443.17z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 632.7259 483.1187)" class="st2 st3 st4">K</text>
+</g>
+<g>
+	<g>
+		<rect x="672.1" y="493.08" class="st1" width="49" height="49"/>
+		<path d="M720.6,493.58v48h-48v-48H720.6 M721.6,492.58h-50v50h50V492.58L721.6,492.58z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 683.735 533.5558)" class="st2 st3 st4">Z</text>
+</g>
+<g>
+	<g>
+		<rect x="622.48" y="541.32" class="st1" width="49" height="49"/>
+		<path d="M670.98,541.82v48h-48v-48H670.98 M671.98,540.82h-50v50h50V540.82L671.98,540.82z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 632.1831 580.7898)" class="st2 st3 st4">H</text>
+</g>
+<g>
+	<g>
+		<rect x="622.48" y="541.32" class="st1" width="49" height="49"/>
+		<path d="M670.98,541.82v48h-48v-48H670.98 M671.98,540.82h-50v50h50V540.82L671.98,540.82z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 632.1831 580.7898)" class="st2 st3 st4">H</text>
+</g>
+<g>
+	<g>
+		<rect x="622.48" y="542.32" class="st1" width="49" height="49"/>
+		<path d="M670.98,542.82v48h-48v-48H670.98 M671.98,541.82h-50v50h50V541.82L671.98,541.82z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 632.1831 581.7898)" class="st2 st3 st4">H</text>
+</g>
+<g>
+	<g>
+		<rect x="572.5" y="493.08" class="st1" width="49" height="49"/>
+		<path d="M621,493.58v48h-48v-48H621 M622,492.58h-50v50h50V492.58L622,492.58z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 583.735 531.8463)" class="st2 st3 st4">Y</text>
+</g>
+<g>
+	<g>
+		<rect x="622.48" y="493.08" class="st1" width="49" height="49"/>
+		<path d="M670.98,493.58v48h-48v-48H670.98 M671.98,492.58h-50v50h50V492.58L671.98,492.58z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 632.788 532.537)" class="st2 st3 st4">A</text>
+</g>
+</svg>
