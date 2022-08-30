@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時間（DATE）と日付（TIME）の取得</title>
+</head>
+<body>
+    <script>
+        let today = new Date(); /* 日付時間の取得関数 */
+        // console.log(today);
+        let FullYear = today.getFullYear();/* 西暦の取得 */
+        // document.write(FullYear);
+        let Month = today.getMonth()+1;/* 月は０から始まるのでプラス１する */
+        // 　　　　　　　　　　　　　↑　を書かずに　Month = Month + 1; でもよい
+        // document.write(Month);
+        let thisDate = today.getDate();/* 日を取得 */
+        let thisDay = today.getDay(); /* 曜日を取得 */
+
+        // 配列を使って曜日を取得
+        let days = ['日','月','火','水','木','金','土'];
+
+        let Hours = today.getHours(); /* 時間取得 */
+        let Minutes = today.getMinutes(); /* 分取得 */
+        let Seconds = today.getSeconds(); /* 秒取得 */
+
+        document.write('今日は西暦'+FullYear+'年'+Month+'月'+thisDate+'日'+days[thisDay]+'曜日'+
+        Hours+'時'+Minutes+'分'+Seconds+'秒です');
+        document.write(Month+'月'+thisDate+'日'+days[thisDay]+'曜日');
+        // let atoday = new Date().getFullYear();
+        // console.log(atoday);
+    </script>
+    <!-- フォーマット例 6月30日木曜日-->
+    
+</body>
+</html>

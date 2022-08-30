@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trattoria Felica</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hamburgers.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="apple-touch-icon" href="Trattoria_tc‗icon.png">
+    <link rel="shortcut icon" href="Trattoria‗fabicon.png">
+
+    <!-- <style> -->
+        <!-- main>div{ -->
+             <!-- height: 100vh;  -->
+        <!-- } -->
+    <!-- </style> -->
+</head>
+<body>
+    <header>
+        <h1><img src="img/logo.svg" alt="logo"></h1>
+    </header>
+    <p class="hamburger hamburger--emphatic" id="btn">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+    </p>
+
+    <nav id="g-nav">
+        <ul class="nav">
+            <li><a href="#">TOP</a></li>
+            <li><a href="#news">お知らせ</a></li>
+            <li><a href="#video">映像</a></li>
+            <li><a href="#Gallery">ギャラリー</a></li>
+            <li><a href="#info">インフォメーション</a></li>
+            <li><a href="#form">お問い合わせ</a></li>
+        </ul>
+        <ul class="sns">
+            <li><a href="https://www.secure.instagram.com/accounts/login/?next=/p/CK7-zB6nVvH/&hl=ja">インスタグラム</a></li>
+            <li><a href="https://www.youtube.com/">ユーチューブ</a></li>
+            <li><a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiamEifQ%3D%3D%22%7D">ツィッター</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-visual">
+        <ul class="bxslider"> <!-- ← class これを入れないと効かない -->
+            <li><img src="img/slide-01.jpg" alt="店外画像"></li>
+            <li><img src="img/slide-02.jpg" alt="店内画像１"></li>
+            <li><img src="img/slide-03.jpg" alt="店内画像２"></li>
+        </ul>
+    </div>
+
+    <main>
+    <div id="news">
+        <h2 class="heading07" data-en="News">新着情報</h2>
+        <dl id="news-list">
+
+        </dl>
+        <p id="more-btn"><a href="#">もっと見る</a></p>
+
+    </div><!-- news -->
+    <div id="video">
+        <h2 class="heading07" data-en="video">映  像</h2>
+        <div class="video-wrapper">
+            <iframe class="my-tube" src="img/tega.mp4" title="MyTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <iframe class="y-tube" src="https://www.youtube.com/embed/pYZpfQ4MkAI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            <!-- <video controls src="img/tega.mp4" autoplay loop oncontextmenu="return false"></video> -->
+        </div>
+
+    </div><!-- video -->
+    <div id="Gallery">
+        <h2 class="heading07" data-en="Gallery">ギャラリー</h2>
+        <div class="gallery-wrapper">
+            <div class="gallery-box">
+                <h3>Lorem, ipsum.</h3>
+                <p><a href="img/modal-001.jpg" data-lightbox="Gallery" data-title="飲み物画像"><img src="img/modal-001.jpg" alt=""></a></p>
+            </div><!-- Gallery-box -->
+            <div class="gallery-box">
+                <h3>Lorem, ipsum.</h3>
+                <p><a href="img/modal-002.jpg" data-lightbox="Gallery" data-title="テーブル画像"><img src="img/modal-002.jpg" alt=""></a></p>
+            </div><!-- Gallery-box -->
+            <div class="gallery-box">
+                <h3>Lorem, ipsum.</h3>
+                <p><a href="img/modal-003.jpg" data-lightbox="Gallery" data-title="料理画像"><img src="img/modal-003.jpg" alt=""></a></p>
+            </div><!-- Gallery-box -->
+        </div><!-- Gallery-wrapper -->
+    </div><!-- Gallery -->
+
+    <div id="info">
+        <h2 class="heading07" data-en="Infomation">インフォメーション</h2>
+        <div class="map-wrapper">
+            <iframe class="g-map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25914.031994971727!2d139.72993996540515!3d35.71997129998733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1656565856879!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="tw">
+            <a class="twitter-timeline" data-width="320" data-height="400" href="https://twitter.com/tocho_koho?ref_src=twsrc%5Etfw">Tweets by tocho_koho</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div><!-- info -->
+    <div id="form">
+        <h2 class="heading07" data-en="anounce">お問い合わせ</h2>
+        <div class="form-wrapper">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfPCvPPI59fDTvJcJRFeMsVcq6FYtZQgHtITBpRJooBnvobuw/viewform?embedded=true" width="640" height="1181" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+        </div>
+    </div><!-- info -->
+    <footer>
+        <p><small>&copy; 2010 - <span id="thisYear"></span> Trattoria Felica </small></p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script src="js/lightbox.js"></script>
+
+    <script>
+        $(function(){
+            $('.bxslider').bxSlider({
+                // 次の画像表示方法
+                mode: 'fade',
+                // 自動で画像チェンジ
+                auto: true,
+                // 次への矢印ボタン表示
+                controls: false,
+                // 現在ページのボタン表示
+                pager: false,
+                // 下記はクロスフェードの指定
+                speed: 2000,
+                pause: 2000,
+            });
+
+            // 年の取得→New Dateを取得してから抽出→動的に年取得設定
+            // 取得が1つであれば有効ですが、複数あったり加工が必要な場合は、それぞれ取得することになる
+            let today = new Date().getFullYear();
+            // console.log(today);
+            $('#thisYear').text(today);
+
+            // ajaxで外部ファイルを読み出しID（クラスやタグ名でも可）の位置に展開
+            $('#news-list').load('news-list.txt');
+
+            // ハンバーガーメニュークリック時
+            $('#btn').on('click',function(){
+                $(this).toggleClass('is-active');
+                // $('#g-nav').fadetoggle('');
+                // $('#g-nav'),slidetoggle('');
+                $('#g-nav').toggleClass('nav-slide');
+            })
+            // スライドバーメニュークリック時
+            $('#g-nav>.nav>li>a').on('click',function(){
+                $('#g-nav').removeClass('nav-slide');
+                $('#btn').removeClass('is-active');
+            });
+            $('.sns>li>a').on('click',function(){
+                $('#g-nav').removeClass('nav-slide');
+                $('#btn').removeClass('is-active');
+            });
+            $('#g-nav').on('click',function(){
+            // $('#g-nav>.nav').on('click',function(){
+                $('#g-nav').removeClass('nav-slide');
+                $('#btn').removeClass('is-active');
+            });
+
+        });
+
+    </script>
+</body>
+</html>
