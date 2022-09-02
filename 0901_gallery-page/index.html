@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filltering とモーダル組み合わせ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <h1>フィルタリングとモーダル組み合わせ</h1>
+    <div class="btn-wrapper">
+        <button data-filter="all">ALL</button>
+        <button data-filter=".sea">海</button>
+        <button data-filter=".mountain">山</button>
+        <button data-filter=".man">人</button>
+        <button data-sort="order:descending">降順</button>
+        <button data-sort="order:asc">昇順</button>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-box mix sea" data-order="11"><!-- mixはフィルタリング用 -->
+            <a href="https://picsum.photos/id/199/1000/700" data-fancybox="images" data-caption="My caption">
+                <img src="https://picsum.photos/id/199/400/300" alt="sea">
+            </a>
+        </div><!-- gallery-box -->
+        <div class="gallery-box mix sea" data-order="12"><!-- mixはフィルタリング用 -->
+            <a href="https://picsum.photos/id/218/1000/700" data-fancybox="images" data-caption="My caption">
+                <img src="https://picsum.photos/id/218/400/300" alt="sea">
+            </a>
+        </div><!-- gallery-box -->
+        <div class="gallery-box mix sea" data-order="13"><!-- mixはフィルタリング用 -->
+            <a href="https://picsum.photos/id/1041/1000/700" data-fancybox="images" data-caption="My caption">
+                <img src="https://picsum.photos/id/1041/400/300" alt="sea">
+            </a>
+        </div><!-- gallery-box -->
+
+
+        <div class="gallery-box mix mountain" data-order="21"><!-- mixはフィルタリング用 -->
+            <a href="https://www.youtube.com/watch?v=lkzahQKoqgs" data-fancybox>
+                <img src="https://picsum.photos/id/287/400/300" alt="Mt">
+            </a>
+        </div><!-- gallery-box -->
+        <div class="gallery-box mix mountain" data-order="22"><!-- mixはフィルタリング用 -->
+            <a href="https://www.youtube.com/watch?v=ci0sWYo2kgk" data-fancybox>
+                <img src="https://picsum.photos/id/235/400/300" alt="Mt">
+            </a>
+        </div><!-- gallery-box -->
+        <div class="gallery-box mix mountain" data-order="23"><!-- mixはフィルタリング用 -->
+            <a href="https://www.youtube.com/watch?v=sQFhzRjtbL0" data-fancybox>
+                <img src="https://picsum.photos/id/110/400/300" alt="Mt">
+            </a>
+        </div><!-- gallery-box -->
+
+
+        <div class="gallery-box mix man" data-order="31"><!-- mixはフィルタリング用 -->
+            <a href="javascript:;" data-fancybox data-type="iframe" data-src="site-01/index.html">
+                <img src="https://picsum.photos/id/1027/400/300" alt="man">
+            </a>
+        </div><!-- gallery-box -->
+        <div class="gallery-box mix man" data-order="32"><!-- mixはフィルタリング用 -->
+            <a href="javascript:;" data-fancybox data-type="iframe" data-src="site-02/index.html">
+                <img src="https://picsum.photos/id/129/400/300" alt="man">
+            </a>
+        </div><!-- gallery-box -->
+        <div class="gallery-box mix man" data-order="33"><!-- mixはフィルタリング用 -->
+            <a href="javascript:;" data-fancybox data-type="iframe" data-src="site-03/index.html">
+                <img src="https://picsum.photos/id/338/400/300" alt="man">
+        </a>
+    </div><!-- gallery-box -->
+
+    </div><!-- gallery -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/mixitup.js"></script>
+    <script>
+        var mixer = mixitup('.gallery');
+    </script>
+    
+</body>
+</html>
