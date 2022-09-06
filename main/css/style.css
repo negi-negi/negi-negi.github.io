@@ -430,9 +430,11 @@ main{
     margin-bottom: 60px;
     background-color: var(--color_1);
     color: var(--color_2);
+    margin: 0 auto;
 }
 .formSec h2{
-    padding-left: 47%;
+    text-align: center;
+    /* padding-left: 47%; */
 }
 form {
     max-width: 1280px;
