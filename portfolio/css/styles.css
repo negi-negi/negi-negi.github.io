@@ -158,7 +158,11 @@ p {
   margin-bottom: 1rem;
   text-align: left;/* 0904追加 */
 }
-
+.negi-info{
+  width: 60%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
 abbr[title],
 abbr[data-bs-original-title] {
   -webkit-text-decoration: underline dotted;
