@@ -1,0 +1,62 @@
+
+/****************************
+wp_enqueue_scriptsの記述例
+*****************************/
+
+function delete_jquery() {
+  if (!is_admin()) {
+    wp_deregister_script('jquery');
+	//初期設定でダッシュボード以外、Wordpressが持っているjQueryを無効にする
+	//wp_deregister_script('jquery'); wp_deregister_scriptは無効の意味で、引数の('jquery')は、Wordpressが持っているjQueryのハンドル名です
+
+    wp_enqueue_script(
+		 'jquery_latest',
+		 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+		  array(),
+		 '3.6.0', //最新のヴァージョンの数値に合わせている
+		 true
+		 );
+	 //初期設定のタイミングで差し替えようのjQueryを読み込む
+  }
+}
+add_action('init', 'delete_jquery');
+
+
+
+function katoh_scripts() {
+	wp_enqueue_style(
+		'base-style',                            // ハンドル名
+//      get_stylesheet_uri(),                    // ファイルのパス --> 教科書では、第一階層のstyle.cssを呼び出す
+        esc_url( get_theme_file_uri('css/style.css') ),   // ファイルのパス --> 教科書の画像などを呼び出す関数
+		array(),              // 依存関係--無ければ、省略か、空のarray()を記述
+		'1.0'               // バージョン指定
+//		'all'                 // メディアタイプ
+	);
+
+	wp_enqueue_style(
+		'bxslider',         // ハンドル名
+         esc_url( get_theme_file_uri('css/jquery.bxslider.css') ),	
+		array('base-style'),                 // 依存関係 --> base-style を先に読み込ませたい場合
+		'1.0'               // バージョン指定
+//		'all'                 // メディアタイプ
+	);
+
+    wp_enqueue_script(
+		'js',         // ハンドル名
+         esc_url( get_theme_file_uri('js/script.js') ),	
+		array('jquery_latest'),             // 依存関係 --> jquery(もともとworpdpressの中にあるjqueryのハンドル名) をなしにしている
+		'1.0',                // バージョン指定
+		true				//読み込み位置--trueの場合wp_footer()の位置に、falseの場合は、wp_head()に出力される
+
+	);
+    wp_enqueue_script(
+		'bxs',         // ハンドル名
+        esc_url( get_theme_file_uri('js/jquery.bxslider.min.js') ),	
+		array('jquery_latest'),             // 依存関係 --> jquery(もともとworpdpressの中にあるjqueryのハンドル名) をなしにしている
+		'1.0',                // バージョン指定
+		true				//読み込み位置--trueの場合wp_footer()の位置に、falseの場合は、wp_head()に出力される
+
+	);
+}
+add_action( 'wp_enqueue_scripts', 'katoh_scripts' );
+//基本形 --> katoh_scriptsのように、任意の名前を付ける

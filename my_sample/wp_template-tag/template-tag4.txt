@@ -1,0 +1,67 @@
+
+/****************************
+funcitons.phpに記述　=== アイキャッチ画像を有効化
+*****************************/
+//アイキャッチ画像を有効化
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 231, 177, false );
+//231は横幅の最大値、177は縦長の画像の場合の最大値、falseは、比率を保持して縮小。tureは、トリミングされる
+
+/****************************
+PHPに記述　=== アイキャッチ画像を有効化　--> after_setup_theme
+*****************************/
+<?php if( has_post_thumbnail() ): //もしアイキャッチ画像の設定があれば ?>
+<?php the_post_thumbnail(); ?>
+<?php else: //もしアイキャッチ画像の指定がなかったら ?>
+<img src="<?php echo esc_url( get_theme_file_uri( 'image/ダミー画像' ) ); ?>" alt="">
+<?php endif; //条件分岐終了 ?>
+
+
+
+/****************************
+funcitons.phpに記述　=== カスタムメニュー　--> after_setup_theme
+*****************************/
+register_nav_menus(
+    array(
+        'globalnav' => 'グローバルナビゲーション',
+        //phpに記述する、'theme_location'  => 'globalnav' と一致させる
+    )
+);
+
+/****************************
+PHPに記述　=== カスタムメニュー
+*****************************/
+<?php wp_nav_menu(
+    array(
+            'theme_location'  => 'globalnav',
+            'container'       => 'div', //ulを囲む要素指定
+            'container_class' => 'c-global-nav',//ulを囲む要素クラス指定
+            'menu_class'       => 'test',   //ulのクラス指定
+        )
+    );
+?>
+
+
+
+/****************************
+funcitons.phpに記述 === ウィジェットエリアの登録
+*****************************/
+
+function custom_widget_register() {
+	register_sidebar( array(
+		'name'          => 'サイドバーウィジェットエリア',
+		'id'            => 'sidebar-widget',
+		'description'   => 'ブログページのサイドバーに表示されます。',
+		'before_widget' => '<div id="%1$s" class="c-widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="c-widget__title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'custom_widget_register' );
+
+/****************************
+PHPに記述 教科書では、サイドバーに
+*****************************/
+<?php dynamic_sidebar('sidebar-widget'); ?>
+

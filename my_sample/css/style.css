@@ -1,0 +1,826 @@
+@charset "UTF-8";
+
+
+html,body,ul,li,h1,h2,h3,p{
+    margin: 0 ;
+    padding: 0;
+    line-height: 1;
+}
+
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    /*   ここまでフォントファミリー  各OSに適したフォントを用意しておく*/
+    color: #555;
+    /* サイト全体の文字色を定義しておく */
+}
+
+
+
+li {
+    list-style-type: none;
+    /*   liとの装飾を削除する  */
+}
+
+
+a {
+    text-decoration: none;
+    /*   aタグの初期設定。aタグはでデフォルトの下線を消す */
+}
+
+
+img{
+    max-width: 100%;
+    vertical-align: bottom;
+	height:auto;
+    /* 画像表示の初期設定 */
+}
+
+*{
+    box-sizing: border-box;
+    /* すべての要素にボックスモデル設定 */
+}
+
+
+
+
+/*-----------------------------------------
+    pc max- setting   
+-----------------------------------------*/
+
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/*PCの情報コンテンツの最大幅の設定 ------ 各パーツでこのCSSを再利用、または流用*/
+
+/*-----------------------------------------
+    header setting
+------------------------------------------*/
+
+.header {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.header_inner {
+    display: flex;
+    /* 子要素、水平方向の揃えの親要素設定  */
+    justify-content: center;
+    /*  水平方向の揃えのオプション */
+    height: 80px;
+    /* 高さ指定 */
+    align-items: center;
+    /* heightの垂直中央揃えのオプション  */
+}
+
+
+.header h1 a {
+    
+    font-size: 20px;
+    color: #555;
+    display: block;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.header h1 a span{
+    
+    font-size: 10px;
+    display: block;
+}
+
+
+
+@media screen and (min-width:768px) {
+
+    .header {
+        position: static;
+    }
+
+
+    .header_inner {
+        justify-content: space-between;
+        /*  水平方向の揃えのオプション */
+    }
+
+    .header h1 a {
+        font-size: 24px;
+        padding: 10px ;
+        text-align: left;
+        /* line-height: unset; */
+    }
+    
+
+}
+
+
+/*-----------------------------------------
+    nav_menu setting
+------------------------------------------*/
+.nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(42, 42, 42, 0.8);
+    /* z-index: 10; */
+    margin-top: 80px;
+    transition: .4s;
+    transform: translateX(100%);
+
+}
+
+
+.nav li a {
+    display: block;
+    text-align: center;
+    padding: 16px 0;
+    color: rgb(207, 207, 207);
+    font-size: 14px;
+}
+
+
+.nav li:first-child a {
+    padding: 30px 0 16px;
+}
+
+
+@media screen and (min-width:768px) {
+    .nav{
+        position: static;
+        background-color: #fff;
+        width: auto;
+        height: auto;
+        margin-top: 0;
+        transform: translateX(0);
+    }
+
+    .nav ul {
+        display: flex !important;
+        /* jQueryで設定された表示、非表示がタグに直接書かれたものをulを打ち消す */
+    }
+    
+    .nav li{
+        border-left: 1px dotted #999;
+    }
+    .nav li:last-child {
+        border-right: 1px dotted #999;
+    }
+    
+    .nav li a {
+        transition: .5s;
+        display: block;
+        color: #333;
+        padding: 8px 20px;
+
+    }
+
+    .nav li:first-child a {
+        padding: 8px 20px;
+    }
+
+    .nav li a:hover {
+        background-color: #ccc;
+    }
+
+}
+
+
+
+/*-----------------------------------------
+    main_image setting
+------------------------------------------*/
+
+
+.main_image{
+	max-width:1600px;
+  margin:80px auto 60px;
+}
+
+@media screen and (min-width:768px) {
+    .main_image{
+       margin:0 auto 60px;
+    }
+}
+
+
+
+
+
+
+/*-----------------------------------------
+    content setting
+------------------------------------------*/
+.content{
+    padding: 0 40px;
+    margin-bottom: 100px;
+
+}
+
+
+@media screen and (min-width:768px) {
+    .content{
+        display: flex;
+        justify-content: space-between; 
+        padding: 0 10px;
+
+    }
+
+    .page .content{
+        display: block;
+        /* justify-content: space-between;  */
+        padding: 0 10px;
+
+    }
+}
+
+/*-----------------------------------------
+    main setting
+------------------------------------------*/
+
+@media screen and (min-width:768px) {
+    .main{
+        width: calc(80% - 50px);
+
+    }
+}
+
+
+
+/*-----------------------------------------
+    side setting
+------------------------------------------*/
+.side{
+    margin-bottom: 100px;
+
+}
+
+.side h2{
+
+    padding: 10px 0 9px 7px; 
+    font-size: 17px;  
+    margin-bottom: 10px; 
+}
+
+.side li a{
+    display: block;
+    padding: 16px 0 16px 20px;
+    color:#444;
+    transition: .3s;
+    font-size: 14px;
+}
+
+.side li a:hover{
+    background-color: #ccc;
+    /* color: #fff; */
+}
+
+
+
+@media screen and (min-width:768px) {
+    .side{
+        width: 20%;   
+
+    }
+}
+
+
+
+
+
+/*-----------------------------------------
+    multi_column setting
+------------------------------------------*/
+
+.multi_column{
+    margin-bottom: 80px;
+}
+
+
+.multi_column h2{
+    border-left: 4px solid #556;
+    border-bottom: 1px dotted #aaa;
+    background-color: #eee;
+    padding: 10px 0 9px 7px; 
+    font-size: 17px;  
+    margin-bottom: 20px; 
+}
+
+.multi_column h3{
+    padding: 15px 0 0 9px; 
+    font-size: 16px; 
+}
+
+
+/* .multi_column h3 span{
+    padding-left: 10px; 
+    font-size: 12px; 
+    font-weight: normal;
+} */
+
+
+.multi_column li{
+    margin-bottom: 60px;
+    border: 1px dotted #666;
+    padding: 8px;
+}
+
+
+.multi_column .text{
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    padding: 8px 9px 20px;
+    font-size: 14px;
+}
+
+
+@media screen and (min-width:768px) {
+
+
+    .multi_column ul{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .multi_column li{
+        width: 30%;
+        box-sizing: border-box;
+        /* 幅を取得した要素にpaddingや、borderがつくとその分広がるので
+        box-sizing: border-boxをかけてその広がりをふせぐ */
+        margin-bottom: 0;
+    }
+
+
+
+    .multi_column .image{
+        background-color: #000;
+        overflow: hidden;
+    }
+
+    .multi_column .image img{
+        cursor: pointer;
+        overflow: hidden;
+        transition: 0.4s;
+    }
+
+    .multi_column .image img:hover{
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+   
+
+}
+/*-----------------------------------------
+    column setting
+------------------------------------------*/
+
+.column{
+    margin-bottom: 80px;
+}
+
+.column h2{
+    border-left: 4px solid #556;
+    border-bottom: 1px dotted #aaa;
+    background-color: #eee;
+    padding: 10px 0 9px 7px; 
+    font-size: 18px;  
+    margin-bottom: 20px; 
+}
+
+.column_list{
+    margin-bottom: 60px;
+}
+
+.column_list h3 {
+    padding: 10px 0 0; 
+    font-size: 16px; 
+    color: #333;
+}
+
+
+.column_list h3 a{
+    display: block;
+    padding: 10px 0; 
+    font-size: 16px; 
+    color: #333;
+}
+
+
+.column_list h3 span{
+    padding-left: 15px; 
+    font-size: 13px; 
+    font-weight: normal;
+}
+
+.column_list ul{
+    display: flex;
+}
+
+.column_list li{
+    margin-right: 15px;
+}
+
+.column_list li a{
+    display:block;
+    font-size: 13px;
+    color: #fff;
+    padding: 7px  10px;
+    background-color: #666;
+    transition: .3s;
+}
+
+.column_list .text{
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    padding: 8px 0;
+    font-size: 14px;
+
+}
+
+@media screen and (min-width:768px) {
+
+ 
+
+    .column_list{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .column_list.reverse{
+        flex-direction: row-reverse;
+    }
+
+    .column_list .photo{
+        width: 30%;
+    }
+    .column_list .text_box{
+        width: 65%;
+        padding: 0;
+        
+    }
+
+    .column_list li a:hover{
+        background-color: #222;
+    }
+
+    
+}
+
+
+/*-----------------------------------------
+    grids setting
+------------------------------------------*/
+
+
+.grids{
+    margin-bottom: 80px;
+}
+
+.grids li{
+    margin-bottom: 60px;
+}
+
+.grids h2{
+    border-left: 4px solid #556;
+    border-bottom: 1px dotted #aaa;
+    background-color: #eee;
+    padding: 10px 0 9px 7px; 
+    font-size: 17px;  
+    margin-bottom: 20px; 
+}
+
+.grids h3{
+    padding: 15px 0 0 9px; 
+    font-size: 16px; 
+}
+
+
+.grids .text{
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    padding: 8px 9px 20px;
+}
+
+
+
+@media screen and (min-width:768px) {
+
+
+    .grids ul{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-column-gap: 25px;
+        grid-row-gap: 40px;
+
+    }
+
+    .grids li{
+        margin-bottom: 0;
+    }
+
+    .grids h3{
+        padding: 15px 0 0 3px; 
+        font-size: 16px; 
+    }
+
+    .grids .text{
+        line-height: 1.7;
+        letter-spacing: 0.05em;
+        padding: 8px 3px 20px;
+    }
+}
+
+/*------------------------
+    footer setting
+------------------------*/
+
+.footer {
+    background-color: #ccc;
+}
+
+
+.footer_logo h3 a{
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    color: #666;
+    padding: 10px 0 5px;
+}
+
+
+.footer_logo p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.footer_logo p span {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    color: #777;
+}
+
+
+.footer_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.footer_nav li {
+    width: 50%;
+}
+
+.footer_nav li a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #444;
+}
+
+
+
+@media screen and (min-width:768px) {
+
+    .footer_inner {
+        display: flex;
+        justify-content: space-between;
+        height: 150px;
+        align-items: center;
+        /* heightの垂直中央揃えのオプション  */
+    }
+
+    .footer_logo{
+        padding: 0 10px;
+    }
+
+    .footer_logo h3 a,.footer_logo p{
+        text-align: left;
+    }
+
+    .footer_nav {
+        width: 50%;
+    }
+
+    .footer_nav li {
+        flex-grow: 1;
+        width: auto;
+    }
+}
+
+
+/*------------------------
+    burger menu setting
+------------------------*/
+
+.burger {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    cursor: pointer;
+  }
+  
+  .burger span {
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    width: 100%;
+    -webkit-transition: .4s;
+    transition: .4s;
+    top: 0;
+    left: 0;
+    border-top: 1px solid #333;
+    text-align: center;
+  }
+  
+  .burger span:nth-child(2) {
+    top: 9.5px;
+  }
+  
+  .burger span:nth-child(3) {
+    top: 19px;
+  }
+  
+  .burger span:nth-child(4) {
+    top: 28.5px;
+    font-size: 10px;
+    border: none;
+  }
+  
+
+  
+  @media screen and (min-width: 768px) {
+    .burger {
+      display: none;
+    }
+  }
+  
+  .active > span:nth-child(1) {
+    top: 9.5px;
+
+    transform: rotate(-45deg);
+  }
+  
+  .active > span:nth-child(2) {
+
+    transform: rotate(45deg);
+  }
+  
+  .active > span:nth-child(3) {
+    top: 9.5px;
+
+    transform: rotate(45deg);
+  }
+
+
+/*------------------------
+    drawer menu setting
+------------------------*/
+
+  .drawer {
+
+    transform: translateX(0);
+  }
+  
+/*------------------------
+    bg menu setting
+------------------------*/
+
+  .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.5);
+    display: none;
+    /* z-index: 1; */
+  }
+  
+  @media screen and (min-width: 960px) {
+    .bg {
+      display: none;
+    }
+  }
+
+
+/*------------------------
+    toTop button setting
+------------------------*/
+
+.toTop {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background-color: rgba(30, 30, 30, 0.2);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 7px;
+    position: fixed;
+    bottom: 3%;
+    right: 5%;
+}
+
+
+/*------------------------
+    pagination  setting
+------------------------*/
+
+.pagination .nav-links {
+	text-align: center;
+}
+.pagination .nav-links .current {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 8px;
+	border: 1px solid #f00;
+	border-radius: 50%;
+	background: #f00;
+	color: #fff;
+	font-size: 1.4rem;
+	line-height: 30px;
+}
+.pagination .nav-links .dots {
+    display: inline-block;
+	margin: 8px;
+	font-size: 1.4rem;
+	font-weight: bold;
+	line-height: 30px;
+}
+.pagination .nav-links a.page-numbers {
+    display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 8px;
+	border: 1px solid #005bac;
+	border-radius: 50%;
+	font-size: 1.4rem;
+	text-decoration: none;
+	line-height: 30px;
+}
+.pagination .nav-links a.page-numbers:hover {
+	background: #005bac;
+	color: #fff;
+	transition: all .3s;
+}
+.pagination .nav-links a.prev.page-numbers,
+.pagination .nav-links a.next.page-numbers {
+    width: auto;
+	padding-right: 6px;
+	padding-left: 6px;
+	border: 0;
+	border-bottom: 1px solid #005bac;
+	border-radius: 0;
+	background: transparent;
+}
+.pagination .nav-links a.prev.page-numbers:hover,
+.pagination .nav-links a.next.page-numbers:hover {
+    background: #005bac;
+	color: #fff;
+}
+
+
+/*------------------------
+    post-navigation  setting
+------------------------*/
+
+.post-navigation {
+	display: table;
+	width: 100%;
+	padding: 8px 0;
+	font-size: 1.4rem;
+}
+.post-navigation .nav-links {
+	display: table-row;
+	width: 100%;
+	word-break: break-all;
+}
+.post-navigation .nav-links .nav-previous {
+	display: table-cell;
+	width: 50%;
+	padding-right: 48px;
+	text-align: left;
+}
+.post-navigation .nav-links .nav-next {
+	display: table-cell;
+	width: 50%;
+	padding-left: 48px;
+	text-align: right;
+}
