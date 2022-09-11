@@ -1,0 +1,421 @@
+@use "_reset.scss";
+
+//colorの登録
+$base_color:#ffffff;
+$main_color:#c4f2c3;
+$color_1:#eef2c3;
+$color_2:#f7c4f3;
+$color_3:#c3e8f2;
+
+//ブレイクポイントの登録
+$lsp-point:480px;
+$tablet-point:768px;
+$spc-point:900px;
+$lpc-point:1366px;
+
+//mixinの登録
+@mixin lsp {
+    @media (min-width:$lsp-point){
+        @content;
+    }
+}
+@mixin tab {
+    @media (min-width:$tablet-point){
+        @content;
+    }
+}
+@mixin spc {
+    @media (min-width:$spc-point){
+        @content;
+    }
+}
+@mixin lpc {
+    @media (min-width:$lpc-point){
+        @content;
+    }
+}
+
+//ボタンのアニメーションを共通にする
+.btn>a{
+    transition: .2s;
+    &::after{
+        display: inline-block;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #222;
+        border-right: 1px solid #222;
+        transform: rotate(45deg);
+        margin-left: 30px;
+    }
+    &:hover{
+        transform: translateX(5px);
+    }
+}
+
+
+
+//モバイルファースト作成
+html{
+    font-size: 62.5%; // 1rem=10pxにする設定
+}
+// h1{
+//     font-size: 2.6rem;
+//     background-color: $base_color;
+// }
+body{
+    font-size: 1.6rem; //16px相当
+    background-color: $base_color;
+}
+#g-nav_pc{
+    //スマートフォン時はPC版は非表示
+    display: none;//sp時はpc用を非表示
+    @include spc(){
+        display: block;
+        width: 100%;
+        height: 50px;
+        background-color: $main_color;
+        position: sticky;
+        top: 0;
+
+        ul{
+            display: flex;
+            justify-content: center;
+            height: 50px;
+            align-items: center;
+            li{
+                margin: 0 20px;
+                a{
+                    display: block;
+                    padding: 14px;
+                    color: #222;
+                    &:hover{
+                        text-decoration: underline 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//ヘッダー部分
+header{
+    width: 100%;
+    height: 60px;
+    background-color: $color_2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    h1{
+        font-size: 2.8rem;//28px
+    }
+    #ham-btn{
+        width: 50px;
+        height: 50px;
+        // background-color: $color_3;
+        position: relative;
+        span{
+            display: block;
+            width: 30px;
+            height: 3px;
+            border-radius: 2px;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            transition: 0.2s;
+            &::before{
+                display: block;
+                content: "";
+                width: 30px;
+                height: 3px;
+                border-radius: 2px;
+                background-color: #000;
+                position: absolute;
+                top: -20px;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                margin: auto;
+                transition: .2s;
+            }
+            &::after{
+                display: block;
+                content: "";
+                width: 30px;
+                height: 2px;
+                border-radius: 2px;
+                background-color: #000;
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: -25px;
+                margin: auto;
+                transition: .2s;
+
+            }
+        }
+        @include spc(){
+            display: none;
+        }
+    }
+    #ham-btn.is-active{
+        span{
+            background-color: transparent;
+            &::before{
+                top: 0;
+                transform: rotate(135deg);
+            }
+            &::after{
+                bottom: 0;
+                transform: rotate(-135deg);
+            }
+        }
+
+    }
+    @include spc(){
+        position: static;
+        height: auto;
+        display: block;
+        h1{
+            font-size: 3.6rem;
+            padding: 20px;
+            text-align: center;
+        }
+    }
+
+}
+
+#g-nav_sp{
+    //スマートフォン版も最初は非表示にする
+    display: none;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: $main_color;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    padding: 40px;
+    z-index: 5;
+    li{
+        margin-bottom: 20px;
+        a{
+            // background-color: rgb(235, 165, 165);
+            display: block;
+            padding: 10px 0;
+            color: rgb(91, 124, 245);
+            border-bottom:1px solid #ddd;
+        }
+    }
+}
+.container{
+    padding: 70px 10px 10px;
+    @include spc(){
+        padding: 10px;
+    }
+}
+// contents部分
+.contents-box{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 10px;
+
+    .content-img{
+        width: 100%;
+        height: 240px;
+
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .content-text{
+        background-color:$color_1;
+        padding: 20px;
+        h2{
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .text{
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .contents-btn{
+            width: 80%;
+            margin: 20px auto 0;
+            a{
+                display: block;
+                padding: 14px;
+                text-align: center;
+                background-color: rgb(235, 231, 231);
+                color: #222;
+            }
+        }
+    }
+
+    &:nth-of-type(2){
+        .content-text{
+            background-color: $color_2;
+        }
+    }
+    &:nth-of-type(3){
+        .content-text{
+            background-color: $color_3;
+        }
+    }
+    @include tab(){
+        //768px以上のcontents-boxレイアウト変更
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        .content-img{
+            width: calc((100% - 10px) / 3 * 2);
+            height: 400px;
+            @include spc(){
+                height: 600px;
+            }
+        }
+        .content-text{
+            width: calc((100% - 10px) / 3);
+            padding-top: 50px;
+            h2,p{
+                margin-bottom: 20px;
+            }
+        }
+        &:nth-of-type(2){
+            flex-direction: row;
+        }/* 「アンドマーク」は親にたいして実施する */
+    }
+
+
+} //content-box
+
+.col-1{
+    padding: 40px 20px;
+    background-color: $main_color;
+    margin-bottom: 10px;
+    h2{
+        margin-bottom: 20px;
+        font-size: 2rem;
+    }
+    p{
+        line-height: 1.7;
+    }
+    @include spc(){
+        padding: 100px 40px;
+        text-align: center;
+    }
+}
+//col-3-wrapper 部分
+.col-3-wrapper{
+    .col-3-box{
+        margin-bottom: 10px;
+        .col-3-img>img{
+            width: 100%;
+            height: 180px;
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .col-3-icon{
+            padding: 20px;
+            background-color: $color_1;
+            h3{
+                text-align: center;
+                font-size: 2.0rem;
+            }
+            .icon{
+                width: 70px;
+                height: 70px;
+                background-color: #fff;
+                border-radius: 50%;
+                padding: 14px;
+                margin: 20px auto;
+            }
+            .col-3-btn{
+                width: 60%;
+                margin: 0 auto;
+                a{
+                    display: block;
+                    padding: 10px 0;
+                    text-align: center;
+                    color: #222;
+                    background-color: rgb(242, 204, 204);
+                }
+            }//col-3-btn
+        }//col-3-icon
+        &:nth-of-type(2){
+            .col-3-icon{
+                background-color: $color_2;
+            }
+        }
+        &:nth-of-type(3){
+            .col-3-icon{
+                background-color: $color_3;
+            }
+        }
+        @include lsp(){
+            //480px以上の時の.col-3-box
+            display: flex;
+            .col-3-img{
+                width: 50%;
+                height: 240px;
+            }
+            .col-3-icon{
+                width: 50%;
+            }
+        }
+        
+    }
+    @include spc(){
+       //900px以上の時の .col-3-wrapper
+       display: flex;
+       justify-content: space-between;
+
+       .col-3-box{
+            display: block;
+            width: calc((100% - 20px) / 3);
+            .col-3-img{
+                width: 100%;
+                height: 260px;
+            }
+            .col-3-icon{
+                width: 100%;
+                height: 340px;
+                padding-top: 60px;
+            }
+        }
+    }
+}
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: $main_color;
+    text-align: center;
+    line-height: 50px;
+}
+
+//ローディングアニメーション
+
+
+
+#layer path{
+    fill:#fff;/* 塗りの色、背景と同じ色にする */
+    stroke: #535353;/* 塗りの色、背景と同じ色にする */
+    stroke-width: 1px;/* 線の幅 */
+    stroke-dasharray: 10px;/* 破線の設定、10pxなら10pxずつの間隔で破線 */
+
+}

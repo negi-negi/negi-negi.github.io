@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北欧のEC-site風ページ</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="css/style2.min.css">
+</head>
+<body>
+    <header>
+        <h1>Furniture-store</h1>
+        <!-- ハンバーガーメニュー -->
+        <p id="ham-btn" ><span></span></p>
+    </header>
+    <nav id="g-nav_sp">
+        <ul>
+            <li><a href="#">Brands</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Stores</a></li>
+            <li><a href="#">Catalogs</a></li>
+            <li><a href="#">Styling tips</a></li>
+            <li><a href="#">Partners & Press</a></li>
+        </ul>
+    </nav>
+    <nav id="g-nav_pc">
+        <ul>
+            <li><a href="#">Brands</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Stores</a></li>
+            <li><a href="#">Catalogs</a></li>
+            <li><a href="#">Styling tips</a></li>
+            <li><a href="#">Partners & Press</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <main>
+        <div class="contents">
+            <div class="contents-box">
+                <div class="content-text">
+                    <h2>Lorem, ipsum dolor.</h2>
+                    <p class="text">Lorem ipsum dolor sit amet consectetur,<br class="sp-on"> adipisicing elit. Cumque, ab. Impedit facilis corrupti natus odit?</p>
+                    <p class="btn contents-btn"><a href="#">more</a></p>
+                </div><!-- content-text -->
+                <div class="content-img">
+                    <img src="img/b1.jpg" alt="大画面">
+                </div><!-- content-img -->
+            </div><!-- contents-box -->
+            <div class="contents-box">
+                <div class="content-text">
+                    <h2>Lorem, ipsum dolor.</h2>
+                    <p class="text">Lorem ipsum dolor sit amet consectetur,<br class="sp-on"> adipisicing elit. Cumque, ab. Impedit facilis corrupti natus odit?</p>
+                    <p class="btn contents-btn"><a href="#">more</a></p>
+                </div><!-- content-text -->
+                <div class="content-img">
+                    <img src="img/b2.jpg" alt="大画面">
+                </div><!-- content-img -->
+            </div><!-- contents-box -->
+            <div class="contents-box">
+                <div class="content-text">
+                    <h2>Lorem, ipsum dolor.</h2>
+                    <p class="text">Lorem ipsum dolor sit amet consectetur,<br class="sp-on"> adipisicing elit. Cumque, ab. Impedit facilis corrupti natus odit?</p>
+                    <p class="btn contents-btn"><a href="#">more</a></p>
+                </div><!-- content-text -->
+                <div class="content-img">
+                    <img src="img/b3.jpg" alt="大画面">
+                </div><!-- content-img -->
+            </div><!-- contents-box -->
+        </div><!-- contents -->
+        <div class="col-1">
+            <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio itaque blanditiis quae nisi alias obcaecati corrupti labore mollitia!</p>
+        </div><!-- col-1 -->
+        <!-- 縦３列縦⇒縦３列横⇒横３列縦 -->
+
+        <div class="col-3-wrapper">
+            <div class="col-3-box">
+                <div class="col-3-img">
+                    <img src="img/s1.jpg" alt="">
+                </div><!-- col-3-img -->
+                <div class="col-3-icon">
+                    <h3>Lorem, ipsum.</h3>
+                    <p class="icon"><img src="img/icon-1.svg" alt=""></p>
+                    <p class="btn col-3-btn"><a href="#">more</a></p>
+                </div><!-- col-3-icon -->
+            </div><!-- col-3-box -->
+            <div class="col-3-box">
+                <div class="col-3-img">
+                    <img src="img/s2.jpg" alt="">
+                </div><!-- col-3-img -->
+                <div class="col-3-icon">
+                    <h3>Lorem, ipsum.</h3>
+                    <p class="icon"><img src="img/icon-2.svg" alt=""></p>
+                    <p class="btn col-3-btn"><a href="#">more</a></p>
+                </div><!-- col-3-icon -->
+            </div><!-- col-3-box -->
+            <div class="col-3-box">
+                <div class="col-3-img">
+                    <img src="img/s3.jpg" alt="">
+                </div><!-- col-3-img -->
+                <div class="col-3-icon">
+                    <h3>Lorem, ipsum.</h3>
+                    <p class="icon"><img src="img/icon-3.svg" alt=""></p>
+                    <p class="btn col-3-btn"><a href="#">more</a></p>
+                </div><!-- col-3-icon -->
+            </div><!-- col-3-box -->
+        </div><!-- col-3-wrapper -->
+        </main>
+        <footer>&copy;<small>北欧のEC-site</small></footer>
+    </div><!-- container -->
+    <div class="curtain">
+        <div class="svg-box">
+       
+        </div><!-- svg-box -->
+    </div><!-- curtain -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <script>
+        $(function(){
+            $('#ham-btn').on('click',function(){
+                $(this).toggleClass('is-active');
+                $('#g-nav_sp').slideToggle(300);
+            });
+            $('#g-nav_sp').on('click',function(){
+                $(this).slideUp(200);
+                $('#ham-btn').removeClass('is-active');
+            });
+
+        });
+    </script>
+</body>
+</html>

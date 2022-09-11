@@ -1,0 +1,68 @@
+@use "_reset.scss";
+@use "_h1.scss";
+
+$main_color:#57bde8;
+$color_2:#b0f4e4;
+$color_3:#efa87c;
+$unit:8px;
+
+$tablet:1000px;
+$smartph:500px;
+
+//pcファースト
+@mixin tab {
+    @media (max-width:$tablet){
+        @content;
+    }
+}
+@mixin sp {
+    @media (max-width:$smartph){
+        @content;
+    }
+}
+
+//モバイルファースト
+//500px以上の時
+@mixin pad {
+    @media (min-width:$smartph){
+        @content;
+    }
+}
+//1000px以上の時
+@mixin pc {
+    @media (min-width:$tablet){
+        @content;
+    }
+}
+body{
+    background-color: #7e88e3;
+
+//
+@include pad{
+    background-color: #f3ed99;
+}
+@include pc{
+    background-color: #f7bff7;
+}
+
+//モバイル
+/*     @include tab{
+        background-color: #ddddaa;
+    }
+    @include sp{
+        background-color: #e8aae8;
+    } */
+}
+
+//pの背景色を500px以上の時に$color_2、1000px以上の時に$color_3を関数を使い設定
+p{
+    background-color: $main_color;
+    padding: $unit*3;
+    @include pad{
+        background-color: $color_2;
+    }
+    @include pc{
+        background-color: $color_3;
+    }
+
+}
