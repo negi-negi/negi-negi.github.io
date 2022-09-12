@@ -1,1 +1,0 @@
-# negi-negi.github.io
